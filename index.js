@@ -9,7 +9,9 @@ const authRoute = require("./routes/auth")
 const postRoute = require("./routes/post")
 require("./prod")(app)
 
-mongoose.connect("mongodb://localhost/socialmedia").then(()=>{
+let mongoURL = "mongodb+srv://root:root@cluster0.fqw6n.mongodb.net/?retryWrites=true&w=majority"
+
+mongoose.connect(mongoURL).then(()=>{
     console.log("mongoDB connected successfully")
 })
 .catch((err)=>{
